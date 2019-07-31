@@ -6,37 +6,38 @@ namespace TravelDiary.Controllers
 {
     public class PlacesController : Controller
     {
-        // [HttpGet("/pluralClassName")]
-        // public ActionResult Index()
-        // {
-        //     // List<Item> allItems = Item.GetAll();
-        //     // return View(allItems);
-        // }
+        [HttpGet("/places")]
+        public ActionResult Index()
+        {
+            List<Place> allPlaces = Place.GetAll();
+            return View(allPlaces);
+        }
 
-        // [HttpGet("/pluralClassName/new")]
-        // public ActionResult New()
-        // {
-        //     return View();
-        // }
+        [HttpPost("/places")]
+        public ActionResult Create(string cityName)
+        {
+            Place newPlace = new Place(cityName);
+            return RedirectToAction("Index");
+        }
 
-        // [HttpPost("/pluralClassName")]
-        // public ActionResult Create(string description)
-        // {
-        //     // Item myItem = new Item(description);
-        //     return RedirectToAction("Index");
-        // }
+        [HttpGet("/places/new")]
+        public ActionResult New()
+        {
+            return View();
+        }
 
-        // [HttpPost("/pluralClassName/delete")]
-        // public ActionResult DeleteAll()
-        // {
-        //     // Item.ClearAll();
-        //     return View();
-        // }
-        // [HttpGet("/pluralClassName/{id}")]
-        // public ActionResult Show(int id)
-        // {
-        //     // Item foundItem = Item.Find(id);
-        //     // return View(foundItem);
-        // }
+        [HttpPost("/places/delete")]
+        public ActionResult ClearAll()
+        {
+            Place.ClearAll();
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet("/places/{id}")]
+        public ActionResult Show(int id)
+        {
+            Place foundPlace = Place.Find(id);
+            return View(foundPlace);
+        }
     }
 }
