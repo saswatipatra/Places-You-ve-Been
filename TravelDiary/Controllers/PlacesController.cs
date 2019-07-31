@@ -1,10 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
-using ProjectName.Models;
+using TravelDiary.Models;
 using System.Collections.Generic;
 
-namespace ProjectName.Controllers
+namespace TravelDiary.Controllers
 {
-    public class PluralClassNameController : Controller
+    public class PlacesController : Controller
     {
         // [HttpGet("/pluralClassName")]
         // public ActionResult Index()

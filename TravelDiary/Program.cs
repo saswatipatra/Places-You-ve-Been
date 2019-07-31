@@ -1,5 +1,5 @@
 using System;
-using NAMESPACE;
+using TravelDiary.Models;
 
 class Program
 {

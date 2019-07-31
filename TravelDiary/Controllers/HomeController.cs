@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using ProjectName.Models;
+using TravelDiary.Models;
 
-namespace ProjectName.Controllers
+namespace TravelDiary.Controllers
 {
     public class HomeController : Controller
     {
